@@ -1,0 +1,6 @@
+<!-- {{ instance.label }} -->
+<div id='{{ instance.div_id }}' {{ instance.attributes_str }}>
+    <script>
+        googletag.cmd.push(function() { googletag.display('{{ instance.div_id }}'); });
+    </script>
+</div>

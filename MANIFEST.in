@@ -1,0 +1,9 @@
+include .editorconfig
+include *.py
+include *.rst
+include *.yaml
+include tox.ini
+recursive-include src *.html
+recursive-include tests *.in
+recursive-include tests *.py
+recursive-include tests *.txt
