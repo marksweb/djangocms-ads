@@ -1,9 +1,13 @@
-include .editorconfig
-include *.py
-include *.rst
-include *.yaml
-include tox.ini
+global-exclude *.py[cod]
+prune __pycache__
+prune tests
+exclude .editorconfig
+exclude .pre-commit-config.yaml
+exclude test_settings.py
+exclude tox.ini
+include HISTORY.rst
+include LICENSE
+include pyproject.toml
+include README.rst
+include src/*/py.typed
 recursive-include src *.html
-recursive-include tests *.in
-recursive-include tests *.py
-recursive-include tests *.txt
