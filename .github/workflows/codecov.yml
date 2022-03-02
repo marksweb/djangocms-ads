@@ -11,10 +11,12 @@ jobs:
         python-version: [ 3.8, 3.9, ]
         requirements-file: [
             py38-cms37-django22.txt,
+            py38-cms37-django31.txt,
             py38-cms39-django22.txt,
+            py38-cms39-django31.txt,
             py38-cms39-django32.txt,
-            py39-cms37-django22.txt,
             py39-cms39-django22.txt,
+            py39-cms39-django31.txt,
             py39-cms39-django32.txt,
         ]
         os: [
