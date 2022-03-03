@@ -4,6 +4,20 @@ from django.test import TestCase
 
 from djangocms_ads.models import AdSlotPlugin, AdvancedAdContainerPlugin, AdvertPlugin, SimpleAdContainerPlugin
 
+SCRIPT = \
+"""
+<script>
+  window.googletag = window.googletag || {cmd: []};
+  googletag.cmd.push(function() {
+      googletag.defineSlot('/4321/Leaderboard', [728, 90], 'div-gpt-ad-1232449682314-0').addService(googletag.pubads());
+      googletag.defineSlot('/4321/MPU', [300, 250], 'div-gpt-ad-1523479823898-0').addService(googletag.pubads());
+    googletag.pubads().enableSingleRequest();
+    googletag.pubads().collapseEmptyDivs();
+    googletag.enableServices();
+  });
+</script>
+""" # noqa
+
 
 class ModelTestCase(TestCase):
 
@@ -29,13 +43,14 @@ class ModelTestCase(TestCase):
     def test_advanced_instance(self):
         AdvancedAdContainerPlugin.objects.create(
             internal_name="Test advanced container",
-            content="",
+            content=SCRIPT,
         )
         instance = AdvancedAdContainerPlugin.objects.all()
         self.assertEqual(instance.count(), 1)
         instance = AdvancedAdContainerPlugin.objects.first()
         # test strings
         self.assertEqual(str(instance), "Test advanced container")
+        self.assertEqual(instance.content, SCRIPT)
 
     def test_simple_instance(self):
         SimpleAdContainerPlugin.objects.create(
