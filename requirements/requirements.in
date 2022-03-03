@@ -4,8 +4,5 @@ django-app-helper
 django-cms
 django-treebeard==4.4
 djangocms-attributes-field
-isort
-flake8
-pre-commit
 pytest
 pytest-django
