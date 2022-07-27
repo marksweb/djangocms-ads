@@ -5,7 +5,10 @@ History
 `Unreleased`_
 =============
 
-* Added python 3.10 to test suite.
+`1.1.0`_ (2022-07-27)
+=====================
+
+* Added python 3.10 support. `#11`_
 
 `1.0.1`_ (2022-03-02)
 =====================
@@ -19,6 +22,8 @@ History
 
 .. _1.0.0: https://github.com/marksweb/djangocms-ads/tree/1.0.0
 .. _1.0.1: https://github.com/marksweb/djangocms-ads/compare/1.0.0...1.0.1
-.. _Unreleased: https://github.com/marksweb/djangocms-ads/compare/1.0.1...master
+.. _1.1.0: https://github.com/marksweb/djangocms-ads/compare/1.0.1...1.1.0
+.. _Unreleased: https://github.com/marksweb/djangocms-ads/compare/1.1.0...master
 
 .. _#1: https://github.com/marksweb/djangocms-ads/pull/1
+.. _#11: https://github.com/marksweb/djangocms-ads/pull/11
