@@ -117,6 +117,48 @@ if __name__ == "__main__":
     )
     subprocess.run(
         [
+            "python3.8",
+            *common_args,
+            "--upgrade-package",
+            "Django>=3.2,<4.0",
+            "--upgrade-package",
+            "django-cms==3.10",
+            "-o",
+            "py38-cms310-django32.txt",
+        ],
+        check=True,
+        capture_output=True,
+    )
+    subprocess.run(
+        [
+            "python3.9",
+            *common_args,
+            "--upgrade-package",
+            "Django>=3.2,<4.0",
+            "--upgrade-package",
+            "django-cms==3.10",
+            "-o",
+            "py39-cms310-django32.txt",
+        ],
+        check=True,
+        capture_output=True,
+    )
+    subprocess.run(
+        [
+            "python3.10",
+            *common_args,
+            "--upgrade-package",
+            "Django>=3.2,<4.0",
+            "--upgrade-package",
+            "django-cms==3.10",
+            "-o",
+            "py310-cms310-django32.txt",
+        ],
+        check=True,
+        capture_output=True,
+    )
+    subprocess.run(
+        [
             "python3.9",
             *common_args,
             "--upgrade-package",
