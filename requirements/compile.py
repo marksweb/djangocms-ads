@@ -117,6 +117,20 @@ if __name__ == "__main__":
     )
     subprocess.run(
         [
+            "python3.9",
+            *common_args,
+            "--upgrade-package",
+            "Django>=3.2a1,<3.3",
+            "--upgrade-package",
+            "django-cms==3.9",
+            "-o",
+            "py39-cms39-django32.txt",
+        ],
+        check=True,
+        capture_output=True,
+    )
+    subprocess.run(
+        [
             "python3.8",
             *common_args,
             "--upgrade-package",
@@ -159,14 +173,28 @@ if __name__ == "__main__":
     )
     subprocess.run(
         [
-            "python3.9",
+            "python3.11",
             *common_args,
             "--upgrade-package",
-            "Django>=3.2a1,<3.3",
+            "Django>=4.1,<4.2",
             "--upgrade-package",
-            "django-cms==3.9",
+            "django-cms==3.11",
             "-o",
-            "py39-cms39-django32.txt",
+            "py311-cms311-django41.txt",
+        ],
+        check=True,
+        capture_output=True,
+    )
+    subprocess.run(
+        [
+            "python3.11",
+            *common_args,
+            "--upgrade-package",
+            "Django>=4.2rc1,<5.0",
+            "--upgrade-package",
+            "django-cms==3.11",
+            "-o",
+            "py311-cms311-django42.txt",
         ],
         check=True,
         capture_output=True,
