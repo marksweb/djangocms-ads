@@ -36,7 +36,8 @@ class AdPluginsTestCase(CMSTestCase):
         self.superuser.delete()
 
     def test_advanced_ad_rendering(self):
-        request_url = self.page.get_absolute_url(self.language) + "?toolbar_off=true"
+        request_url = self.page.get_absolute_url(
+            self.language) + "?toolbar_off=true"
 
         add_plugin(
             self.page.placeholders.get(slot="content"),
@@ -44,7 +45,7 @@ class AdPluginsTestCase(CMSTestCase):
             self.language,
             internal_name="advanced plugin",
             content=SCRIPT,
-            template='default',
+            template="default",
         )
         advert = add_plugin(
             self.page.placeholders.get(slot="content"),
@@ -65,14 +66,15 @@ class AdPluginsTestCase(CMSTestCase):
         self.assertIn(b"div-gpt-ad-1232449682314-0", response.content)
 
     def test_simple_ad_rendering(self):
-        request_url = self.page.get_absolute_url(self.language) + "?toolbar_off=true"
+        request_url = self.page.get_absolute_url(
+            self.language) + "?toolbar_off=true"
 
         add_plugin(
             self.page.placeholders.get(slot="content"),
             "SimpleAdContainer",
             self.language,
             internal_name="simple plugin",
-            template='default',
+            template="default",
         )
         ad_slot = add_plugin(
             self.page.placeholders.get(slot="content"),
