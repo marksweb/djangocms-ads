@@ -1,8 +1,12 @@
 from __future__ import annotations
 
 from django.test import TestCase
-
-from djangocms_ads.models import AdSlotPlugin, AdvancedAdContainerPlugin, AdvertPlugin, SimpleAdContainerPlugin
+from djangocms_ads.models import (
+    AdSlotPlugin,
+    AdvancedAdContainerPlugin,
+    AdvertPlugin,
+    SimpleAdContainerPlugin,
+)
 
 SCRIPT = \
 """

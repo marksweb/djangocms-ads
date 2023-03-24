@@ -2,14 +2,18 @@ from __future__ import annotations
 
 from typing import Any
 
+from cms.models import CMSPlugin
 from django.conf import settings
 from django.db import models
 from django.utils.translation import gettext_lazy as _
-
-from cms.models import CMSPlugin
 from djangocms_attributes_field.fields import AttributesField
 
-__all__ = ["AdSlotPlugin", "AdvancedAdContainerPlugin", "AdvertPlugin", "SimpleAdContainerPlugin"]
+__all__ = [
+    "AdSlotPlugin",
+    "AdvancedAdContainerPlugin",
+    "AdvertPlugin",
+    "SimpleAdContainerPlugin"
+]
 
 
 # Add additional choices through the ``settings.py``.
@@ -44,7 +48,7 @@ class AdvancedAdContainerPlugin(CMSPlugin):
     )
 
     class Meta:
-        app_label = 'djangocms_ads'
+        app_label = "djangocms_ads"
         verbose_name = _("Advanced ad container")
         verbose_name_plural = _("Advanced ad containers")
 
@@ -70,7 +74,7 @@ class SimpleAdContainerPlugin(CMSPlugin):
     )
 
     class Meta:
-        app_label = 'djangocms_ads'
+        app_label = "djangocms_ads"
         verbose_name = _("Simple ad container")
         verbose_name_plural = _("Simple ad containers")
 
@@ -88,17 +92,26 @@ class AdSlotPlugin(CMSPlugin):
     ad_unit_path = models.CharField(
         verbose_name=_("Ad unit path"),
         max_length=255,
-        help_text=_("The first item provided by google for the slot, e.g. '/4321234/MPU'")
+        help_text=_(
+            "The first item provided by google "
+            "for the slot, e.g. '/4321234/MPU'"
+        )
     )
     sizes = models.CharField(
         verbose_name=_("Ad sizes"),
         max_length=255,
-        help_text=_("The second item provided by google for the slot, e.g. [300, 250]")
+        help_text=_(
+            "The second item provided by google for the "
+            "slot, e.g. [300, 250]"
+        )
     )
     div_id = models.CharField(
         verbose_name=_("Div ID"),
         max_length=100,
-        help_text=_("The third item provided by google for the slot, e.g. 'div-gpt-ad-12345-0'")
+        help_text=_(
+            "The third item provided by google for the slot, "
+            "e.g. 'div-gpt-ad-12345-0'"
+        )
     )
     template = models.CharField(
         verbose_name=_("Template"),
@@ -111,7 +124,7 @@ class AdSlotPlugin(CMSPlugin):
     )
 
     class Meta:
-        app_label = 'djangocms_ads'
+        app_label = "djangocms_ads"
         verbose_name = _("ad slot")
         verbose_name_plural = _("ad slots")
 
@@ -131,14 +144,19 @@ class AdvertPlugin(CMSPlugin):
     div_id = models.CharField(
         verbose_name=_("Div ID"),
         max_length=100,
-        help_text=_("The third item provided by google for the slot, e.g. 'div-gpt-ad-12345-0'")
+        help_text=_(
+            "The third item provided by google for the "
+            "slot, e.g. 'div-gpt-ad-12345-0'"
+        )
     )
     attributes = AttributesField(
-        verbose_name=_("Attributes"), blank=True, excluded_keys=["href", "target", "id"]
+        verbose_name=_("Attributes"),
+        blank=True,
+        excluded_keys=["href", "target", "id"]
     )
 
     class Meta:
-        app_label = 'djangocms_ads'
+        app_label = "djangocms_ads"
         verbose_name = _("advert plugin model")
         verbose_name_plural = _("advert plugin models")
 
