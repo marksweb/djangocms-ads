@@ -13,7 +13,7 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ('cms', '0034_remove_pagecontent_placeholders'),
+        ('cms', '__latest__'),
     ]
 
     operations = [
