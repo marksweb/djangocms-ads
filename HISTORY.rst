@@ -5,6 +5,11 @@ History
 `Unreleased`_
 =============
 
+`1.1.2`_ (2023-08-31)
+=====================
+
+* Fix migration dependency from django-cms due to new migrations in django-cms v3. `#32`_
+
 `1.1.1`_ (2023-03-24)
 =====================
 
@@ -34,3 +39,4 @@ History
 .. _#1: https://github.com/marksweb/djangocms-ads/pull/1
 .. _#11: https://github.com/marksweb/djangocms-ads/pull/11
 .. _#21: https://github.com/marksweb/djangocms-ads/pull/21
+.. _#32: https://github.com/marksweb/djangocms-ads/pull/32
