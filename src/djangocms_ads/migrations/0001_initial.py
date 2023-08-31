@@ -13,7 +13,7 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ('cms', '__latest__'),
+        ('cms', '__first__'),
     ]
 
     operations = [
